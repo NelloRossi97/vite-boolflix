@@ -1,0 +1,33 @@
+
+Creare un nuovo progetto usando Vite e Vue 3 che si ispiri al sito di Netflix usando le API di themoviedb.org
+
+MILESTONE 1:
+Studiare come è costruita e come usare l'API fornita.
+
+MILESTONE 2:
+Considerando com'è strutturata l'API iniziare ad elaborare un impianto grafico per il sito.
+Creare quindi una navbar nella quale ci andrà almeno una barra di ricerca che ci permetterà di filtrare i film e le serie TV.
+Poi un main che conterrà film e serie TV.
+
+MILESTONE 3:
+Una volta realizzato l'impianto grafico di base, inserire le card dei film e delle serie TV all'interno del main facendo in modo di visualizzare
+l'immagine, il titolo, il paese della lingua originale, la valutazione (in stelle) e la trama.
+
+MILESTONE 4:
+Aggiornare i risultati nel main in base alla ricerca effettuata dall'utente.
+
+MILESTONE 5: 
+Fare in modo che le info del film si visualizzino soltanto all'hover del mouse sull'oggetto in questione.
+
+BONUS:
+1. Aggiungere un'animazione personalizzata che visualizzi le info del film/serie TV.;
+2. Visualizzare al caricamento della pagina i film e le serie TV più viste;
+3. Aggiungere un Loader prima di visualizzare il sito;
+4. Aggiungere un hero in cui si visualizzano le info e l'immagine/video di uno dei film più visti;
+
+SUPER BONUS:
+Al click su un film parte il player del video.
+
+IPER MEGA GIGA BONUS:
+Fare in modo che la riproduzione del video riparta da dove era stata interrotta.
+
