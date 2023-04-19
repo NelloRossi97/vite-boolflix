@@ -1,1 +1,10 @@
 @use './partials/variables' as *;
+@import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '@fortawesome/fontawesome-free/scss/solid.scss';
+
+@import 'bootstrap/scss/bootstrap.scss';
+
+body{
+    background-color: $bg-color;
+    color: white;
+}
