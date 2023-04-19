@@ -6,12 +6,18 @@
 </template>
 
 <script>
+import { store } from '../data/store';
 import Card from './Card.vue';
     export default {
     name: 'CardsList',
     props: ['title'],
-    components: { Card }
+    components: { Card },
+    data() {
+        return {
+            store
+        }
     }
+}
 </script>
 
 <style lang="scss" scoped>

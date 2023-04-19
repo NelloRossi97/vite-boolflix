@@ -24,7 +24,7 @@
             
             <form action="">
                 <input type="text" placeholder="Cerca film o serie TV" class="me-3">
-                <button type="submit">Cerca</button>
+                <button type="submit" class="btn btn-danger">Cerca</button>
             </form>
         </nav>
     </header>
