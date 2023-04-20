@@ -1,6 +1,6 @@
 <template>
-    <header>
-        <nav class="d-flex justify-content-between align-items-center h-100 px-3">
+    <header class="container-fluid">
+        <nav class="d-flex justify-content-between align-items-center h-100 p-3">
             <div class="d-flex align-items-center p-1 h-100">
                 <img src="/image/logo.png" alt="logo">
                 <ul class="nav d-none d-lg-flex">
