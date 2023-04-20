@@ -1,6 +1,6 @@
 <template>
     <main class="container">
-       <CardsList :title="'La tua ricerca'"/>
+       <CardsList/>
     </main>
 </template>
 
