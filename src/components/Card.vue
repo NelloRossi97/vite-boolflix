@@ -21,35 +21,8 @@
             <h4 class="mt-2">{{ titleCard }}</h4>
             <p>{{ description }}</p>
             <span>Lingua originale: {{ language }}</span>
-            <span v-if="getRating === 1">
-                Valutazione:
-                <i class="fa-solid fa-star"></i>
-            </span>
-            <span v-if="getRating === 2">
-                Valutazione:
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-            </span>
-            <span v-if="getRating === 3">
-                Valutazione:
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i> 
-                <i class="fa-solid fa-star"></i>
-            </span>
-            <span v-if="getRating === 4">
-                Valutazione:
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i> 
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-            </span>
-            <span v-if="getRating === 5">
-                Valutazione:
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i> 
-                <i class="fa-solid fa-star"></i> 
-                <i class="fa-solid fa-star"></i> 
-                <i class="fa-solid fa-star"></i>  
+            <span>
+                Valutazione: <i class="fa-solid fa-star" v-for="star in Math.trunc(rating/2)"></i>
             </span>
         </div>
     </div>
@@ -72,11 +45,6 @@ import { store } from '../data/store';
             this.url = `${this.store.baseUrlImg}${this.item.poster_path}`;
             return this.url;
         },
-        getRating() {
-            const stars = this.rating / 2;
-            let total = Math.trunc(stars);
-            return total;
-        }
     }
     }
 </script>
