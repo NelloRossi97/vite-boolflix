@@ -24,7 +24,6 @@
             
             <div>
                 <input type="text" placeholder="Cerca film o serie TV" class="me-3" v-model="store.params.query" @keyup="$emit('onSearch')">
-                <button type="submit" class="btn btn-danger" @click="$emit('onSearch')">Cerca</button>
             </div>
         </nav>
     </header>
@@ -51,6 +50,9 @@ header{
     img{
         width: 15vw;
         height: 100%;
+    }
+    input[type=text]{
+        width: 25vw;
     }
 }
 </style>
