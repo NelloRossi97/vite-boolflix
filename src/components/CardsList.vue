@@ -1,7 +1,7 @@
 <template>
     <h2 class="mt-4">{{ title }}</h2>
     <div class="row mt-4 gap-3 align-items-center">
-        <Card :image="'/image/logo.png'" :titleCard="'Titolo'"/>
+        <Card :image="'/image/logo.png'" :titleCard="film.title" v-for="film in store.filmList"/>
     </div>
 </template>
 

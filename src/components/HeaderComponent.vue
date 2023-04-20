@@ -22,18 +22,24 @@
                 </ul>
             </div>
             
-            <form action="">
-                <input type="text" placeholder="Cerca film o serie TV" class="me-3">
-                <button type="submit" class="btn btn-danger">Cerca</button>
-            </form>
+            <div>
+                <input type="text" placeholder="Cerca film o serie TV" class="me-3" v-model="store.params.query" @keyup.enter="$emit('onSearch')">
+                <button type="submit" class="btn btn-danger" @click="$emit('onSearch')">Cerca</button>
+            </div>
         </nav>
     </header>
 </template>
 
 <script>
+import { store } from '../data/store';
     export default {
-        name:'HeaderComponent'
-    }
+    name: 'HeaderComponent',
+    data() {
+        return {
+               store 
+            }
+        }
+}
 </script>
 
 <style lang="scss" scoped>

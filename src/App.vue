@@ -1,5 +1,5 @@
 <template>
-  <HeaderComponent/>
+  <HeaderComponent @on-search="getFilms"/>
   <MainComponent/>
 </template>
 
@@ -21,16 +21,17 @@ import MainComponent from './components/MainComponent.vue';
   },
   methods: {
     getFilms() {
-      const url = store.baseUrl + store.searchMovie + store.api_key + store.endpoint;
-      axios.get(url).then((res) => {
+      const url = store.baseUrl + store.endpoint.movie;
+      const options = {
+        params: store.params
+      }
+      axios.get(url, options).then((res) => {
         console.log(res.data.results);
-        store.cardsList = res.data.results;
+        this.store.filmList = res.data.results;
       })
     }
   },
   mounted() {
-    store.endpoint = '&language=en-US&query=g&page=1&include_adult=false';
-    this.getFilms();
   }
   }
 </script>

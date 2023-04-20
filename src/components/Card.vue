@@ -2,7 +2,7 @@
     <div class="col-12 col-md-2 d-flex justify--content-center card-container rounded-4 overflow-hidden">
         <div class="d-flex flex-column align-items-center w-100">
             <img :src="image" alt="logo" class="img-fluid h-75">
-            <h4 class="mt-2">{{ titleCard }}</h4>
+            <p class="mt-2">{{ titleCard }}</p>
         </div>
     </div>
 </template>
