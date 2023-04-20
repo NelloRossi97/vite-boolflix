@@ -75,7 +75,6 @@ import { store } from '../data/store';
         getRating() {
             const stars = this.rating / 2;
             let total = Math.trunc(stars);
-            console.log(total);
             return total;
         }
     }

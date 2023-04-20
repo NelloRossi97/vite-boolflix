@@ -23,7 +23,7 @@
             </div>
             
             <div>
-                <input type="text" placeholder="Cerca film o serie TV" class="me-3" v-model="store.params.query" @keyup.enter="$emit('onSearch')">
+                <input type="text" placeholder="Cerca film o serie TV" class="me-3" v-model="store.params.query" @keyup="$emit('onSearch')">
                 <button type="submit" class="btn btn-danger" @click="$emit('onSearch')">Cerca</button>
             </div>
         </nav>
