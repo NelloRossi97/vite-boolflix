@@ -1,5 +1,5 @@
 <template>
-  <HeaderComponent @on-search="getFilms"/>
+  <HeaderComponent @on-search="getData"/>
   <MainComponent/>
 </template>
 
@@ -26,13 +26,24 @@ import MainComponent from './components/MainComponent.vue';
         params: store.params
       }
       axios.get(url, options).then((res) => {
-        console.log(res.data.results);
         this.store.filmList = res.data.results;
       })
+    },
+    getSeries() {
+      const url = store.baseUrl + store.endpoint.tv;
+      const options = {
+        params: store.params
+      }
+      axios.get(url, options).then((res) => {
+        console.log(res.data.results);
+        this.store.seriesList = res.data.results;
+      })
+    },
+    getData() {
+      this.getFilms();
+      this.getSeries();
     }
-  },
-  mounted() {
-  }
+    }
   }
 </script>
 
