@@ -9,3 +9,13 @@ body{
     color: white;
     overflow-x: hidden;
 }
+
+::-webkit-scrollbar {
+    width: 1em;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $bg-cards;
+    outline: 1px solid $bg-cards;
+    border-radius: 10px;
+}
