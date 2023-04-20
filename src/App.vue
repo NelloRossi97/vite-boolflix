@@ -35,7 +35,6 @@ import MainComponent from './components/MainComponent.vue';
         params: store.params
       }
       axios.get(url, options).then((res) => {
-        console.log(res.data.results);
         this.store.seriesList = res.data.results;
       })
     },
