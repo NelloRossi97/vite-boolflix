@@ -1,9 +1,23 @@
 <template>
     <div class="col-12 col-md-6 col-lg-1 d-flex justify-content-center card-container rounded-4 overflow-hidden p-0">
-        <div class="d-flex flex-column align-items-center w-100 h-100 d-none">
+        <div id="image" class="d-flex flex-column align-items-center w-100 h-100 position-relative"
+        v-if="active === false">
             <img :src="getUrl" alt="logo" class="w-100 h-100"> 
+            <span class="position-absolute" 
+            v-if="active === false"
+            @click="active = !active">
+            Info <i class="fa-regular fa-circle-info">
+
+            </i></span>
         </div>
-        <div class="p-4 d-flex flex-column justify-content-between">
+        <div id="info" 
+        class="p-4 d-flex flex-column justify-content-between position-relative"
+        v-if="active === true">
+            <span class="position-absolute" 
+            v-if="active === true"
+            @click="active = !active">
+                <i class="fa-regular fa-arrow-left fs-2"></i>
+            </span>
             <h4 class="mt-2">{{ titleCard }}</h4>
             <p>{{ description }}</p>
             <span>Lingua originale: {{ language }}</span>
@@ -49,7 +63,8 @@ import { store } from '../data/store';
     data() {
         return {
             store,
-            url: ''
+            url: '',
+            active: false
         }
     },
     computed: {
@@ -76,6 +91,31 @@ import { store } from '../data/store';
     p{
         max-height: 60%;
         overflow-y: auto;
+    };
+    #image{
+        &:hover{
+            span{
+               cursor: pointer;
+                background-color: $bg-color; 
+            }
+        }
+        span{
+            right:10px;
+            top: 5px;
+            padding: 0 5px;
+            border-radius: 10px;
+        }
+    }
+    #info{
+        span{
+            right:15px;
+            top: 10px;
+            padding: 0 5px;
+            border-radius: 10px;
+            &:hover{
+                cursor: pointer;
+            }
+        }
     }
 }
 </style>
