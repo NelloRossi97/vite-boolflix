@@ -22,8 +22,10 @@
             <p>{{ description }}</p>
             <span>Lingua originale: {{ language }}</span>
             <span>
-                Valutazione: <i class="fa-solid fa-star" v-for="star in Math.trunc(rating/2)"></i>
+                Valutazione: <i class="fa-solid fa-star" :class="(n<=stars) ? 'fa-solid' : 'fa-regular'" v-for="(n,index) in 5" :key="index"></i>
             </span>
+
+            
         </div>
     </div>
 </template>
@@ -45,6 +47,9 @@ import { store } from '../data/store';
             this.url = `${this.store.baseUrlImg}${this.item.poster_path}`;
             return this.url;
         },
+        stars() {
+            return Math.trunc   (this.rating/2)
+        }
     }
     }
 </script>
