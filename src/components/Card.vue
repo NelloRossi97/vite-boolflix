@@ -6,7 +6,7 @@
             <span id="icon-info" class="position-absolute" 
             v-if="active === false"
             @click="active = !active">
-            Info <i class="fa-regular fa-circle-info">
+            Info <i class="fa-solid fa-circle-info">
 
             </i></span>
         </div>
@@ -16,11 +16,11 @@
             <span id="icon-back" class="position-absolute" 
             v-if="active === true"
             @click="active = !active">
-                <i class="fa-regular fa-arrow-left fs-2"></i>
+                <i class="fa-solid fa-arrow-left fs-2"></i>
             </span>
             <h4 class="mt-2">{{ titleCard }}</h4>
             <p>{{ description }}</p>
-            <p>Lingua originale: <span :class="'fi fi-' + language + ' fis'"></span></p>
+            <p>Lingua originale: <span class="ms-1" :class="'fi fi-' + language + ' fis'"></span></p>
             <span>
                 Valutazione: <i class="fa-solid fa-star" :class="(n<=stars) ? 'fa-solid' : 'fa-regular'" v-for="(n,index) in 5" :key="index"></i>
             </span>
@@ -57,6 +57,7 @@ import { store } from '../data/store';
 <style lang="scss" scoped>
 @use '../assets/styles/partials/variables' as *;
 @import 'flag-icons/css/flag-icons.min.css';
+
 .card-container{
     width: 300px;
     height: 450px;
@@ -89,6 +90,9 @@ import { store } from '../data/store';
                 cursor: pointer;
             }
         }
+    }
+    .fi{
+        border-radius: 5px;
     }
 }
 </style>
