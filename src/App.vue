@@ -26,7 +26,14 @@ import MainComponent from './components/MainComponent.vue';
         params: store.params
       }
       axios.get(url, options).then((res) => {
-        this.store.filmList = res.data.results;
+        this.store.filmList = res.data.results.map((item) => {
+          const langMap = { en: 'gb', ja: 'jp', cs: 'cz', zh: 'cn' };
+          return {
+            ...item,
+            original_language:
+              langMap[item.original_language] || item.original_language,
+          }
+        })
       })
     },
     getSeries() {

@@ -74,7 +74,14 @@ import Card from './Card.vue';
                 params: store.params
             }
             axios.get(url, options).then((res) => {
-                this.store.popularFilmList = res.data.results;
+                this.store.popularFilmList = res.data.results.map((item) => {
+                    const langMap = { en: 'gb', ja: 'jp', cs: 'cz', zh: 'cn' };
+                    return {
+                        ...item,
+                        original_language:
+                            langMap[item.original_language] || item.original_language,
+                    }
+                });
             })
         },
         getPopularSeries() {
@@ -83,7 +90,14 @@ import Card from './Card.vue';
                 params: store.params
             }
             axios.get(url, options).then((res) => {
-                this.store.popularSeriesList = res.data.results;
+                this.store.popularSeriesList = res.data.results.map((item) => {
+                    const langMap = { en: 'gb', ja: 'jp', cs: 'cz', zh: 'cn' };
+                    return {
+                        ...item,
+                        original_language:
+                            langMap[item.original_language] || item.original_language,
+                    }
+                });
             })
         },
     },
